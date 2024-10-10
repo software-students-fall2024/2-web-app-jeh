@@ -8,11 +8,11 @@
     <body>
         <div id="wrap">
             <header>
-                <h1>Search Recipes</h1>
+                <h1>Search Restaurants</h1>
                 <nav>
                     <a href="{{ url_for('index') }}">Home</a>&nbsp;&nbsp;
                     <a href="{{ url_for('view') }}">View All Recipes</a>&nbsp;&nbsp;
-                    <a href="{{ url_for('search') }}"><b>Search Recipes</b></a>&nbsp;&nbsp;
+                    <a href="{{ url_for('search') }}"><b>Search Restaurant</b></a>&nbsp;&nbsp;
                     <a href="{{ url_for('add') }}">Add a Recipe</a>&nbsp;&nbsp;
                     <a href="{{ url_for('edit') }}">Edit a Recipe</a>&nbsp;&nbsp;
                     <a href="{{ url_for('delete') }}">Delete a Recipe</a>
@@ -24,18 +24,24 @@
                     <table width="100%" border="1">
                         <tbody>
                             <tr>
-                                <td colspan="2"><b>Search Recipes</b></td>
+                                <td colspan="2"><b>Enter all applicable information</b></td>
                             </tr>
                             <tr>
-                                <td>Recipe Title</td>
+                                <td>Restaurant Name</td>
                                 <td>
-                                    <input class="textarea" type="text" placeholder="Search..." name="recipeTitle">
+                                    <input class="textarea" type="text" placeholder="Search..." name="restaurantName">
                                 </td>
                             </tr>
                             <tr>
-                                <td>Recipe Author</td>
+                                <td>Restaurant Cuisine</td>
                                 <td>
-                                    <input class="textarea" type="text" placeholder="Search..." name="recipeAuthor">
+                                    <input class="textarea" type="text" placeholder="Search..." name="restaurantCuisine">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Restaurant Location</td>
+                                <td>
+                                    <input class="textarea" type="text" placeholder="Search..." name="restaurantLocation"
                                 </td>
                             </tr>
                             <tr>

@@ -31,7 +31,20 @@ def edit():
 #Search data route
 @app.route('/search')
 def search():
-    return render_template('search.html')
+    
+    nameSearch = request.args.get('restaurantName')
+    cuisineSearch = request.args.get('restaurantCuisine')
+    locationSearch = request.args.get('restaurantLocation')
+    query = {}
+    if nameSearch:
+        query['name'] = {'$regex': nameSearch, '$options': 'i'}
+    if cuisineSearch:
+        query['cuisine'] = {'$regex': cuisineSearch, '$options': 'i'}
+    if locationSearch:
+        query['location'] = {'$regex': locationSearch, '$options': 'i'}
+    restaurants = db.RestaurantCluster.find(query)
+    restaurantList = list(restaurants)
+    return render_template('search.html', restaurants=restaurantList)
 
 #View all data route
 @app.route('/view')
