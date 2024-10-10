@@ -4,7 +4,7 @@ A little exercise to build a web application following an agile development proc
 
 ## Product vision statement
 
-Share and discover favorite food recipes with your community.
+GoodEats: share and discover restaurants with your community.
 
 ## User stories
 
@@ -17,3 +17,4 @@ See instructions. Delete this line and place instructions to download, configure
 ## Task boards
 
 [Sprint 1](https://github.com/orgs/software-students-fall2024/projects/13)
+[Sprint 2](https://github.com/orgs/software-students-fall2024/projects/23/views/1)

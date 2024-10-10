@@ -2,22 +2,20 @@
 {% block container %}
 <table width="100%" border="1">
     <tr>
-        <th>Author Name</th>
-        <th>Recipe Title</th>
-        <th>Servings</th>
-        <th>Time</th>
-        <th>Ingredients</th>
-        <th>Instructions</th>
+        <th>User Name</th>
+        <th>Restaurant Name</th>
+        <th>Cuisine Type</th>
+        <th>Location</th>
+        <th>Review/Comments</th>
     </tr>
-    {% for recipe in recipes %}
+    {% for restaurant in restaurants %}
     <tr>
-        <td>{{ recipe.authorName }}</td>
-        <td>{{ recipe.recipeTitle }}</td>
-        <td>{{ recipe.servings }}</td>
-        <td>{{ recipe.time }}</td>
-        <td>{{ recipe.ingredients }}</td>
-        <td>{{ recipe.instructions }}</td>
-    </tr>
+        <td>{{ restaurant.userName }}</td>
+        <td>{{ restaurant.restaurantName }}</td>
+        <td>{{ restaurant.cuisine }}</td>
+        <td>{{ restaurant.location }}</td>
+        <td>{{ restaurant.review }}</td>
+     </tr>
     {% endfor %}
 </table>
 {% endblock %}
