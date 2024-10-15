@@ -200,14 +200,18 @@ def create_app():
     @app.route('/addData', methods=['POST'])
     @login_required
     def addData():
+        
         restaurantData = {
             'username': current_user.username,
             'restaurantName': request.form['restaurantName'],
-            'cuisine': request.form['cuisine'],
-            'location': request.form['location'],
+            'cuisine': request.form.get('cuisine', 'Other'),
+            'location': request.form.get('location', 'Other'),
             'review': request.form['review']
         }
 
+        if not request.form['restaurantName']:
+            return "Please enter a restaurant name",400
+        
         #Add recipe data to db
         db.RestaurantData.insert_one(restaurantData)
 
