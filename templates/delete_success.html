@@ -3,17 +3,17 @@
 {% block container %}
     <h1>Success!</h1>
     <br>
-    <p>Restaurant "{{ restaurantName }}" was deleted successfully!</p>
+    <p>Restaurant "{{ restaurantName }}" was deleted!</p>
     <br>
 
     <!--  home page -->
     <form action="{{ url_for('home') }}" method="get">
-        <button type="submit">Return to Home</button>
+        <button type="submit">Return to home</button>
     </form>
     <br>
 
     <!--  button to delete another -->
     <form action="{{ url_for('delete') }}" method="get">
-        <button type="submit">Delete Another Restaurant</button>
+        <button type="submit">Delete another restaurant</button>
     </form>
 {% endblock %}
