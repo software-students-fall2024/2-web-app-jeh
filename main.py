@@ -7,7 +7,6 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, log
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 from bson.objectid import ObjectId
-#just commenting so i can redo the pr
 
 load_dotenv()
 
@@ -212,7 +211,7 @@ def create_app():
         #Add recipe data to db
         db.RestaurantData.insert_one(restaurantData)
 
-        #change to success page 
+        #Change to success page 
         return redirect(url_for('add_success', restaurantName=request.form['restaurantName']))
     
     @app.route('/add_success')
@@ -226,15 +225,18 @@ def create_app():
     def deleteData():
         restaurantName = request.form['restaurantName']
         if not restaurantName:
-            return "Please Enter a Restaurant Name in order to Delete",400
+            return "Please enter a restaurant name in order to delete",400
+        if request.form['username'] != current_user.username:
+            return "Entered username does not match the username associated with the logged-in account",400
+        
         deleteRestaurant = db.RestaurantData.delete_one({'username': current_user.username, 'restaurantName': restaurantName})
         
         #change to a popup on screen
         if deleteRestaurant.deleted_count == 1: #if deleted ouput result to user
-             #change to delete success page 
-             return redirect(url_for('deleteSuccess', restaurantName=restaurantName))
+            #change to delete success page 
+            return redirect(url_for('deleteSuccess', restaurantName=restaurantName))
         else:
-             #change to not delete success page 
+            #change to not delete success page 
             return redirect(url_for('deleteFail', restaurantName=restaurantName))
     @app.route('/deleteSuccess')
     def deleteSuccess():
@@ -248,8 +250,6 @@ def create_app():
     
     app.debug = True
     return app
-
-    
 
 #run
 if __name__ == '__main__':

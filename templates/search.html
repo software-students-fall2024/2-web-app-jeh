@@ -76,8 +76,8 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center;">
-                    <input type="submit" value="Search">
                     <input type="reset" value="Clear">
+                    <input type="submit" value="Submit">
                 </td>
             </tr>
         </tbody>
@@ -85,7 +85,9 @@
 </form>
 {%if request.args%}
     {%if restaurants%}
+        <br>
         <h3>Results:</h3>
+        <br>
         <table border="1" width="100%">
             <thead>
                 <tr>
@@ -108,6 +110,7 @@
         </table>
         <br>
     {%else%}
+        <br>
         <p>No restaurants found.</p>
     {%endif%}
 {%endif%}
