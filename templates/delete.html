@@ -1,27 +1,17 @@
 {% extends 'base.html' %}
 {% block container %}
-<form action="{{ url_for('deleteData') }}" method="post">
-    <table width="100%" border="1">
-        <tbody>
-            <tr><td colspan="2"><b>Enter all information</b></td></tr>
-            <tr>
-                <td colspan="2">Please re-enter your username for verification purposes. You are still logged in.</td>
-            </tr>
-            <tr>
-                <td>Username</td>
-                <td><input class="textarea" type="text" placeholder="Enter username..." name="username"></td>
-            </tr>
-            <tr>
-                <td>Restaurant Name</td>
-                <td><input class="textarea" type="text" placeholder="Enter restaurant name..." name="restaurantName"></td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center;">
-                    <input type="reset" value="Clear">
-                    <input type="submit" value="Delete">
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<form class="form" action="{{ url_for('deleteData') }}" method="post">
+    <h1>Delete</h1>
+    <p>Please reenter your information for verification purposes</p>
+    <div class="labeled-input">
+        <label>Restaurant Name</label>
+        <input required type="text" id="restaurantName" name="restaurantName" placeholder="Restaurant Name">
+    </div>
+    <div class="labeled-input">
+        <label>Username</label>
+        <input required type="text" id="username" name="username" placeholder="Username">
+    </div>
+    <input type="reset" value="Clear">
+    <input type="submit" value="Submit">
 </form>
 {% endblock %}
