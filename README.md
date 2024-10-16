@@ -14,14 +14,19 @@ GoodEats: share and discover restaurants with your community.
 
 1. Clone this repository to your computer
 
-2. Create a .env to store key-value pairs (provided in the discord channel).
+2. Install requirements using the following command:
+```
+pip install -r requirements.txt
+```
 
-3. Run the app using the following command:
+3. Create a .env to store key-value pairs (provided in the discord channel).
+
+4. Run the app using the following command:
 ```
 python main.py
 ```
 
-4. View the app in your browser at this link: http://127.0.0.1:5000
+5. View the app in your browser at this link: http://127.0.0.1:5000
 
 ## Task boards
 
