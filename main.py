@@ -172,10 +172,10 @@ def create_app():
     @login_required
     def search():
         query = {}
-        nameSearch = request.args.get('resName')
-        cuisineSearch = request.args.get('resCuisine')
-        locationSearch = request.args.get('resLocation')
-        userSearch = request.args.get('resUser')
+        nameSearch = request.args.get('restaurantName')
+        cuisineSearch = request.args.get('cuisine')
+        locationSearch = request.args.get('location')
+        userSearch = request.args.get('username')
         
         if nameSearch or cuisineSearch  or locationSearch or userSearch:
             if nameSearch:
@@ -242,6 +242,7 @@ def create_app():
         else:
             #change to not delete success page 
             return redirect(url_for('deleteFail', restaurantName=restaurantName))
+    
     @app.route('/deleteSuccess')
     def deleteSuccess():
         restaurantName = request.args.get('restaurantName')

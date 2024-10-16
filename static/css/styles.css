@@ -13,16 +13,20 @@ body {
     margin: auto;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:640px) {
     body {
-        min-width: 100%;
-        margin: 0;
+        width: 100%;
+        margin: 0 !important;
     }
 }
 
 .textarea {
     box-sizing: border-box;
     width: 100%;
+}
+
+h1 {
+    font-size: 24px;
 }
 
 a, p, li, label {
@@ -42,6 +46,7 @@ header {
     padding: 16px 24px;
     border-bottom: 1px solid #d9d7d7;
     nav {
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -68,7 +73,7 @@ footer {
 }
 
 .wrapper {
-    margin: 16px 24px 24px;
+    margin: 32px 24px;
     min-height: 100%;
     flex: 1;
 }
@@ -127,7 +132,8 @@ footer {
     gap: 8px;
 }
 
-input, textarea {
+input, select, textarea {
+    font-size: 16px;
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #b0b0b0;
@@ -155,4 +161,8 @@ input[type=reset] {
 
 button:hover, input[type=submit]:hover, input[type=reset]:hover {
     cursor: pointer;
+}
+
+.li {
+    margin-left: 16px;
 }

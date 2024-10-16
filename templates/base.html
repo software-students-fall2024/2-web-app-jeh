@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>GoodEats</title>
+        <title>GoodEats</title>
         <link
             rel="stylesheet"
             href="{{ url_for('static', filename='css/styles.css') }}"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header>
@@ -13,7 +14,7 @@
                 <a id="logo" href="{{ url_for('home')}}">GoodEats</a>
                 <ul>
                     <li><a href="{{ url_for('search')}}">Search</a></li>
-                    <li><a href="{{ url_for('add')}}">Add Restaurant</a></li>
+                    <li><a href="{{ url_for('add')}}">Post</a></li>
                     {% if current_user.is_authenticated %}
                         <a href="{{ url_for('logout')}}">Logout</a>
                     {% endif %}

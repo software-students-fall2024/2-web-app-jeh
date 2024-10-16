@@ -3,7 +3,7 @@
 {% block container %}
     <h1>Success!</h1>
     <br>
-    <p>Restaurant "{{ restaurantName }}" was added successfully!</p>
+    <p>Restaurant "{{ restaurantName }}" was posted successfully!</p>
     <br>
 
     <!--  home page -->
@@ -14,6 +14,6 @@
 
     <!--  button to add another -->
     <form action="{{ url_for('add') }}" method="get">
-        <button type="submit">Add another restaurant</button>
+        <button type="submit">Post another restaurant</button>
     </form>
 {% endblock %}

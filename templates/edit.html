@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block container %}
 <form class="form" action="{{ url_for('edit', post_id=restaurant._id) }}" method="post" onsubmit="submitForm(event)">
+    <h1>Edit</h1>
     <div class="labeled-input">
         <label>Restaurant Name</label>
-        <input type="text" id="restaurantName" name="restaurantName" value="{{ restaurant.restaurantName }}" placeholder="Restaurant Name">
+        <input required type="text" id="restaurantName" name="restaurantName" value="{{ restaurant.restaurantName }}" placeholder="Restaurant Name">
     </div>
     <div class="labeled-input">
         <label>Cuisine Type</label>
-        <select class="textarea" id="cuisine" name="cuisine" placeholder="Cuisine Type">
+        <select required class="textarea" id="cuisine" name="cuisine" placeholder="Cuisine Type">
             <option disabled>Select cuisine type...</option>
             <option value="African" {% if restaurant.cuisine == 'African' %}selected{% endif %}>African</option>
             <option value="American" {% if restaurant.cuisine == 'American' %}selected{% endif %}>American</option>
@@ -30,7 +31,7 @@
     </div>
     <div class="labeled-input">
         <label>Location</label>
-        <select class="textarea" id="location" name="location" placeholder="Location">
+        <select required class="textarea" id="location" name="location" placeholder="Location">
             <option disabled>Select location...</option>
             <option value="Alphabet City" {% if restaurant.location == 'Alphabet City' %}selected{% endif %}>Alphabet City</option>
             <option value="Midtown" {% if restaurant.location == 'Midtown' %}selected{% endif %}>Midtown</option>
@@ -59,8 +60,9 @@
     </div>
     <div class="labeled-input">
         <label>Review/Comments</label>
-        <textarea id="review" name="review" cols="50" rows="10" placeholder="Review/Comments">{{ restaurant.review }}</textarea>
+        <textarea required id="review" name="review" cols="50" rows="10" placeholder="Review/Comments">{{ restaurant.review }}</textarea>
     </div>
+    <input type="reset" value="Clear">
     <input type="submit" value="Submit">
 </form>
 {% endblock %}

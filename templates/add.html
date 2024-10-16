@@ -1,89 +1,77 @@
 {% extends 'base.html' %} 
 {% block container %}
-<form action="{{ url_for('addData') }}" method="post" onsubmit="submitForm(event)">
-    <table width="100%" border="1">
-        <tbody>
-            <tr><td colspan="2"><b>Enter all applicable information</b></td></tr>
-            <tr>
-                <td>Resaurant Name</td>
-                <td><input class="textarea" type="text" placeholder="Enter restaurant name..." name="restaurantName"></td>
-            </tr>
-            <tr>
-                <td>Cuisine Type</td>
-                <td>
-                    <select class="textarea" name="cuisine">
-                        <option value="" disabled selected>Select cuisine type...</option>
-                        <option value="African">African</option>
-                        <option value="American">American</option>
-                        <option value="Caribbean">Caribbean</option>
-                        <option value="Chinese">Chinese</option>
-                        <option value="Cuban">Cuban</option>
-                        <option value="French">French</option>
-                        <option value="Greek">Greek</option>
-                        <option value="Indian">Indian</option>
-                        <option value="Italian">Italian</option>
-                        <option value="Japanese">Japanese</option>
-                        <option value="Korean">Korean</option>
-                        <option value="Mexican">Mexican</option>
-                        <option value="Middle Eastern">Middle Eastern</option>
-                        <option value="Spanish">Spanish</option>
-                        <option value="Thai">Thai</option>
-                        <option value="Vietnamese">Vietnamese</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Location</td>
-                <td>
-                    <select class="textarea" name="location">
-                        <option value="" disabled selected>Select location...</option>
-                        <option value="Alphabet City">Alphabet City</option>
-                        <option value="Midtown">Midtown</option>
-                        <option value="Midtown South">Midtown South</option>
-                        <option value="Midtown East">Midtown East</option>
-                        <option value="Hell's Kitchen">Hell's Kitchen</option>
-                        <option value="Hudson Yards">Hell's Kitchen</option>
-                        <option value="Chelsea">Chelsea</option>
-                        <option value="Meatpacking District">Meatpacking District</option>
-                        <option value="Flatiron">Flatiron</option>
-                        <option value="NoMad">NoMad</option>
-                        <option value="Greenwhich Village">Greenwhich Village</option>
-                        <option value="West Village">West Village</option>
-                        <option value="East Village">East Village</option>
-                        <option value="SoHo">SoHo</option>
-                        <option value="Bowery">Bowery</option>
-                        <option value="Little Italy">Little Italy</option>
-                        <option value="Nolita">Nolita</option>
-                        <option value="Tribeca">Tribeca</option>
-                        <option value="Chinatown">Chinatown</option>
-                        <option value="NoHo">NoHo</option>
-                        <option value="Central Park South">Central Park South</option>
-                        <option value="Upper East Side">Upper East Side</option>
-                        <option value="Upper West Side">Upper West Side</option>
-                        <option value="Gramercy Park">Bowery</option>
-                        <option value="Lincoln Square">Lincoln Square</option>
-                        <option value="Financial District">Financial District</option>
-                        <option value="Battery Park City">Battery Park City</option>
-                        <option value="Lower East Side">Lower East Side</option>
-                        <option value="Union Square">Union Square</option>
-                        <option value="Harlem">Harlem</option>
-                        <option value="Morningside Heights">Morningside Heights</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Review/Comments</td>
-                <td><textarea class="textarea" placeholder="Enter review or comments..." name="review" cols="50" rows="10"></textarea></td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center;">
-                    <input type="reset" value="Clear">
-                    <input type="submit" value="Submit">
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<form class="form" action="{{ url_for('addData') }}" method="post" onsubmit="submitForm(event)">
+    <h1>Post Restaurant</h1>
+    <div class="labeled-input">
+        <label>Restaurant Name</label>
+        <input required type="text" id="restaurantName" name="restaurantName" placeholder="Restaurant Name">
+    </div>
+    <div class="labeled-input">
+        <label>Cuisine Type</label>
+        <select required class="textarea" name="cuisine">
+            <option value="" disabled selected>Select cuisine type...</option>
+            <option value="African">African</option>
+            <option value="American">American</option>
+            <option value="Caribbean">Caribbean</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Cuban">Cuban</option>
+            <option value="French">French</option>
+            <option value="Greek">Greek</option>
+            <option value="Indian">Indian</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Korean">Korean</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Middle Eastern">Middle Eastern</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Thai">Thai</option>
+            <option value="Vietnamese">Vietnamese</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    <div class="labeled-input">
+        <label>Location</label>
+        <select required class="textarea" name="location">
+            <option value="" disabled selected>Select location...</option>
+            <option value="Alphabet City">Alphabet City</option>
+            <option value="Midtown">Midtown</option>
+            <option value="Midtown South">Midtown South</option>
+            <option value="Midtown East">Midtown East</option>
+            <option value="Hell's Kitchen">Hell's Kitchen</option>
+            <option value="Hudson Yards">Hell's Kitchen</option>
+            <option value="Chelsea">Chelsea</option>
+            <option value="Meatpacking District">Meatpacking District</option>
+            <option value="Flatiron">Flatiron</option>
+            <option value="NoMad">NoMad</option>
+            <option value="Greenwhich Village">Greenwhich Village</option>
+            <option value="West Village">West Village</option>
+            <option value="East Village">East Village</option>
+            <option value="SoHo">SoHo</option>
+            <option value="Bowery">Bowery</option>
+            <option value="Little Italy">Little Italy</option>
+            <option value="Nolita">Nolita</option>
+            <option value="Tribeca">Tribeca</option>
+            <option value="Chinatown">Chinatown</option>
+            <option value="NoHo">NoHo</option>
+            <option value="Central Park South">Central Park South</option>
+            <option value="Upper East Side">Upper East Side</option>
+            <option value="Upper West Side">Upper West Side</option>
+            <option value="Gramercy Park">Bowery</option>
+            <option value="Lincoln Square">Lincoln Square</option>
+            <option value="Financial District">Financial District</option>
+            <option value="Battery Park City">Battery Park City</option>
+            <option value="Lower East Side">Lower East Side</option>
+            <option value="Union Square">Union Square</option>
+            <option value="Harlem">Harlem</option>
+            <option value="Morningside Heights">Morningside Heights</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+        <div class="labeled-input">
+        <label>Review/Comments</label>
+        <textarea required class="textarea" placeholder="Review/Comments" name="review" cols="50" rows="10"></textarea>
+    </div>
+    <input type="reset" value="Clear">
+    <input type="submit" value="Submit">
 </form>
 {% endblock %}
